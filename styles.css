@@ -25,6 +25,20 @@
     --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 }
 
+[data-theme="dark"] {
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-dark: #020617;
+    --border-color: #334155;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -41,6 +55,7 @@ body {
     background-color: var(--bg-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -65,9 +80,17 @@ body {
     transition: all 0.3s ease;
 }
 
+[data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.8);
+}
+
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    background: rgba(15, 23, 42, 0.95);
 }
 
 .nav-container {
@@ -119,6 +142,34 @@ body {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: scale(1.1);
 }
 
 .nav-toggle {
@@ -359,6 +410,11 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .code-window {
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .code-header {
@@ -368,6 +424,10 @@ body {
     align-items: center;
     gap: 0.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .code-header {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .code-dot {
@@ -392,6 +452,7 @@ body {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
     line-height: 1.8;
+    min-height: 200px;
 }
 
 .code-content pre {
@@ -403,6 +464,7 @@ body {
 .code-variable { color: #82aaff; }
 .code-property { color: #7fdbca; }
 .code-string { color: #c3e88d; }
+.code-tag { color: #ff5370; }
 .code-prompt { color: #82aaff; font-weight: 600; }
 .code-command { color: #c3e88d; }
 .code-output { color: #e2e8f0; }
@@ -687,7 +749,7 @@ section {
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem;
-    background: white;
+    background: var(--bg-primary);
     border-radius: 8px;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
@@ -985,7 +1047,7 @@ section {
     font-family: inherit;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: white;
+    background: var(--bg-primary);
     color: var(--text-primary);
 }
 
@@ -1058,13 +1120,14 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: white;
+        background: var(--bg-primary);
         width: 100%;
         text-align: center;
         transition: 0.3s;
         box-shadow: var(--shadow-lg);
         padding: 2rem 0;
         gap: 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .nav-menu.active {
@@ -1076,6 +1139,10 @@ section {
     }
 
     .nav-toggle {
+        display: flex;
+    }
+    
+    .theme-toggle {
         display: flex;
     }
 
@@ -1150,6 +1217,23 @@ section {
 
     .skill-items {
         grid-template-columns: 1fr;
+    }
+    
+    .code-content {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+    
+    .hero-content {
+        gap: 2rem;
+    }
+    
+    .about-content {
+        gap: 2rem;
+    }
+    
+    .contact-content {
+        gap: 2rem;
     }
 }
 

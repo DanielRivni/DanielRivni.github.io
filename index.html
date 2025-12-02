@@ -36,10 +36,15 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -98,21 +103,18 @@
                         <span class="code-dot red"></span>
                         <span class="code-dot yellow"></span>
                         <span class="code-dot green"></span>
-                        <span class="code-title">terminal</span>
+                        <span class="code-title">portfolio.tsx</span>
                     </div>
-                    <div class="code-content">
-                        <pre><code><span class="code-prompt">$</span> <span class="code-command">whoami</span>
-<span class="code-output">daniel-rivni</span>
-
-<span class="code-prompt">$</span> <span class="code-command">cat about.txt</span>
-<span class="code-output">Software Engineer | Full-Stack Developer
-Passionate about clean code & innovative solutions
-Expertise: React, Node.js, Python, Cloud, DevOps</span>
-
-<span class="code-prompt">$</span> <span class="code-command">ls projects/</span>
-<span class="code-output">Coupix/  DroneAutoLanding/  Road-Buddiz/</span>
-
-<span class="code-prompt">$</span> <span class="code-cursor-blink">_</span></code></pre>
+                    <div class="code-content" id="code-content">
+                        <pre><code><span class="code-keyword">const</span> <span class="code-variable">Portfolio</span> = () => {
+  <span class="code-keyword">return</span> (
+    <span class="code-tag">&lt;div</span> <span class="code-property">className</span>=<span class="code-string">"portfolio"</span><span class="code-tag">&gt;</span>
+      <span class="code-tag">&lt;Hero</span> <span class="code-property">name</span>=<span class="code-string">"Daniel Rivni"</span> <span class="code-tag">/&gt;</span>
+      <span class="code-tag">&lt;Projects</span> <span class="code-property">projects</span>={<span class="code-variable">featuredProjects</span>} <span class="code-tag">/&gt;</span>
+      <span class="code-tag">&lt;Skills</span> <span class="code-property">tech</span>={<span class="code-variable">techStack</span>} <span class="code-tag">/&gt;</span>
+    <span class="code-tag">&lt;/div&gt;</span>
+  );
+};</code></pre>
                     </div>
                 </div>
             </div>

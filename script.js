@@ -1,4 +1,33 @@
 // ============================================
+// Theme Toggle
+// ============================================
+
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', currentTheme);
+updateThemeIcon(currentTheme);
+
+function updateThemeIcon(theme) {
+    if (themeIcon) {
+        themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+}
+
+// ============================================
 // Navigation
 // ============================================
 
@@ -214,36 +243,82 @@ if (scrollIndicator) {
 }
 
 // ============================================
-// Code Window Animation
+// Code Editor Animation
 // ============================================
 
-const codeWindow = document.querySelector('.code-window');
-
-if (codeWindow) {
-    // Add typing effect to terminal commands
-    const codeContent = codeWindow.querySelector('code');
-    if (codeContent) {
-        const originalCode = codeContent.innerHTML;
-        codeContent.innerHTML = '';
-        
-        setTimeout(() => {
-            let charIndex = 0;
-            const codeText = originalCode;
-            
-            function typeCode() {
-                if (charIndex < codeText.length) {
-                    const char = codeText.charAt(charIndex);
-                    codeContent.innerHTML += char;
-                    charIndex++;
-                    // Faster typing for terminal effect
-                    const delay = char === '\n' ? 200 : 50;
-                    setTimeout(typeCode, delay);
-                }
-            }
-            
-            typeCode();
-        }, 1500);
+const codeSnippets = [
+    {
+        code: `<span class="code-keyword">const</span> <span class="code-variable">Portfolio</span> = () => {
+  <span class="code-keyword">return</span> (
+    <span class="code-tag">&lt;div</span> <span class="code-property">className</span>=<span class="code-string">"portfolio"</span><span class="code-tag">&gt;</span>
+      <span class="code-tag">&lt;Hero</span> <span class="code-property">name</span>=<span class="code-string">"Daniel Rivni"</span> <span class="code-tag">/&gt;</span>
+      <span class="code-tag">&lt;Projects</span> <span class="code-property">projects</span>={<span class="code-variable">featuredProjects</span>} <span class="code-tag">/&gt;</span>
+      <span class="code-tag">&lt;Skills</span> <span class="code-property">tech</span>={<span class="code-variable">techStack</span>} <span class="code-tag">/&gt;</span>
+    <span class="code-tag">&lt;/div&gt;</span>
+  );
+};`,
+        title: 'portfolio.tsx'
+    },
+    {
+        code: `<span class="code-keyword">async</span> <span class="code-keyword">function</span> <span class="code-variable">deployProject</span>() {
+  <span class="code-keyword">const</span> <span class="code-variable">build</span> = <span class="code-keyword">await</span> <span class="code-variable">docker</span>.<span class="code-property">build</span>(<span class="code-string">'./app'</span>);
+  <span class="code-keyword">await</span> <span class="code-variable">kubernetes</span>.<span class="code-property">deploy</span>(<span class="code-variable">build</span>);
+  <span class="code-keyword">return</span> <span class="code-string">'Deployed!'</span>;
+}`,
+        title: 'deploy.ts'
+    },
+    {
+        code: `<span class="code-keyword">const</span> <span class="code-variable">techStack</span> = {
+  <span class="code-property">frontend</span>: [<span class="code-string">'React'</span>, <span class="code-string">'TypeScript'</span>],
+  <span class="code-property">backend</span>: [<span class="code-string">'Node.js'</span>, <span class="code-string">'Python'</span>],
+  <span class="code-property">cloud</span>: [<span class="code-string">'Docker'</span>, <span class="code-string">'K8s'</span>]
+};`,
+        title: 'stack.js'
     }
+];
+
+let currentSnippetIndex = 0;
+const codeWindow = document.querySelector('.code-window');
+const codeContent = document.getElementById('code-content');
+const codeTitle = document.querySelector('.code-title');
+
+function animateCodeSnippet() {
+    if (!codeContent || !codeTitle) return;
+    
+    const snippet = codeSnippets[currentSnippetIndex];
+    codeTitle.textContent = snippet.title;
+    
+    const codeElement = codeContent.querySelector('code');
+    if (!codeElement) return;
+    
+    codeElement.innerHTML = '';
+    let charIndex = 0;
+    const codeText = snippet.code;
+    
+    function typeCode() {
+        if (charIndex < codeText.length) {
+            const char = codeText.charAt(charIndex);
+            codeElement.innerHTML += char;
+            charIndex++;
+            const delay = char === '\n' ? 150 : 30;
+            setTimeout(typeCode, delay);
+        } else {
+            // Wait before switching to next snippet
+            setTimeout(() => {
+                currentSnippetIndex = (currentSnippetIndex + 1) % codeSnippets.length;
+                animateCodeSnippet();
+            }, 3000);
+        }
+    }
+    
+    typeCode();
+}
+
+// Start animation after page load
+if (codeWindow) {
+    setTimeout(() => {
+        animateCodeSnippet();
+    }, 1500);
 }
 
 // ============================================
