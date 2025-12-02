@@ -220,7 +220,7 @@ if (scrollIndicator) {
 const codeWindow = document.querySelector('.code-window');
 
 if (codeWindow) {
-    // Add typing effect to code
+    // Add typing effect to terminal commands
     const codeContent = codeWindow.querySelector('code');
     if (codeContent) {
         const originalCode = codeContent.innerHTML;
@@ -232,14 +232,17 @@ if (codeWindow) {
             
             function typeCode() {
                 if (charIndex < codeText.length) {
-                    codeContent.innerHTML += codeText.charAt(charIndex);
+                    const char = codeText.charAt(charIndex);
+                    codeContent.innerHTML += char;
                     charIndex++;
-                    setTimeout(typeCode, 30);
+                    // Faster typing for terminal effect
+                    const delay = char === '\n' ? 200 : 50;
+                    setTimeout(typeCode, delay);
                 }
             }
             
             typeCode();
-        }, 2000);
+        }, 1500);
     }
 }
 
