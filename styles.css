@@ -25,19 +25,6 @@
     --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 }
 
-[data-theme="dark"] {
-    --text-primary: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --text-light: #94a3b8;
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-dark: #020617;
-    --border-color: #334155;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
-}
 
 * {
     margin: 0;
@@ -80,17 +67,9 @@ body {
     transition: all 0.3s ease;
 }
 
-[data-theme="dark"] .navbar {
-    background: rgba(15, 23, 42, 0.8);
-}
-
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow-md);
-}
-
-[data-theme="dark"] .navbar.scrolled {
-    background: rgba(15, 23, 42, 0.95);
 }
 
 .nav-container {
@@ -144,61 +123,6 @@ body {
     width: 100%;
 }
 
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.theme-toggle {
-    background: transparent;
-    border: 2px solid var(--border-color);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.theme-toggle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 50%;
-}
-
-.theme-toggle:hover::before {
-    opacity: 1;
-}
-
-.theme-icon-wrapper {
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease, color 0.3s ease;
-    color: var(--text-primary);
-}
-
-.theme-toggle:hover .theme-icon-wrapper {
-    color: white;
-    transform: rotate(15deg);
-}
-
-.theme-toggle:active .theme-icon-wrapper {
-    transform: rotate(30deg) scale(0.9);
-}
 
 .nav-toggle {
     display: none;
@@ -458,10 +382,6 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-[data-theme="dark"] .tech-icon {
-    background: var(--bg-secondary);
-    border-color: var(--border-color);
-}
 
 .tech-icon:hover {
     transform: translateY(-10px) scale(1.1);
@@ -1225,9 +1145,6 @@ section {
         display: flex;
     }
     
-    .theme-toggle {
-        display: flex;
-    }
 
     .nav-toggle.active .bar:nth-child(1) {
         transform: rotate(45deg) translate(8px, 8px);
