@@ -38,7 +38,9 @@
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span class="theme-icon-wrapper">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </span>
                 </button>
                 <div class="nav-toggle" id="nav-toggle">
                     <span class="bar"></span>
@@ -98,23 +100,30 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="code-window">
-                    <div class="code-header">
-                        <span class="code-dot red"></span>
-                        <span class="code-dot yellow"></span>
-                        <span class="code-dot green"></span>
-                        <span class="code-title">portfolio.tsx</span>
+                <div class="tech-icons-container">
+                    <div class="tech-icon" data-tech="react">
+                        <i class="fab fa-react"></i>
                     </div>
-                    <div class="code-content" id="code-content">
-                        <pre><code><span class="code-keyword">const</span> <span class="code-variable">Portfolio</span> = () => {
-  <span class="code-keyword">return</span> (
-    <span class="code-tag">&lt;div</span> <span class="code-property">className</span>=<span class="code-string">"portfolio"</span><span class="code-tag">&gt;</span>
-      <span class="code-tag">&lt;Hero</span> <span class="code-property">name</span>=<span class="code-string">"Daniel Rivni"</span> <span class="code-tag">/&gt;</span>
-      <span class="code-tag">&lt;Projects</span> <span class="code-property">projects</span>={<span class="code-variable">featuredProjects</span>} <span class="code-tag">/&gt;</span>
-      <span class="code-tag">&lt;Skills</span> <span class="code-property">tech</span>={<span class="code-variable">techStack</span>} <span class="code-tag">/&gt;</span>
-    <span class="code-tag">&lt;/div&gt;</span>
-  );
-};</code></pre>
+                    <div class="tech-icon" data-tech="node">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="tech-icon" data-tech="python">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-icon" data-tech="docker">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <div class="tech-icon" data-tech="java">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <div class="tech-icon" data-tech="git">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <div class="tech-icon" data-tech="cloud">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="tech-icon" data-tech="code">
+                        <i class="fas fa-code"></i>
                     </div>
                 </div>
             </div>
@@ -495,7 +504,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Daniel Rivni. Built with passion and attention to detail.</p>
+                <p>&copy; 2025 Daniel Rivni.</p>
                 <div class="footer-social">
                     <a href="https://github.com/DanielRivni" target="_blank" rel="noopener noreferrer"
                         aria-label="GitHub">
