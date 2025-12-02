@@ -1,70 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Rivni - Portfolio</title>
+    <meta name="description"
+        content="Daniel Rivni - Software Engineer Portfolio. Full-stack developer specializing in Java, Python, React, and cloud technologies." />
+    <title>Daniel Rivni | Software Engineer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <style>
-        body { margin:0; font-family:'Roboto', sans-serif; color:#1a1a1a; background:#f5f7fb; }
-        header { background: linear-gradient(135deg, #0d47a1, #1976d2); color:white; padding:120px 20px; text-align:center; }
-        header h1 { font-size:3rem; margin:0; }
-        header h2 { font-size:1.4rem; opacity:0.9; font-weight:300; }
-        section { padding:60px 20px; max-width:1100px; margin:auto; }
-        h3.section-title { text-align:center; font-size:2rem; margin-bottom:40px; color:#0d47a1; }
-        .about { font-size:1.1rem; line-height:1.7; color:#333; text-align:center; max-width:900px; margin:auto; }
-        .projects { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; }
-        .project-card { background:white; padding:25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:0.3s; }
-        .project-card:hover { transform:translateY(-6px); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
-        .project-card h4 { margin-top:0; color:#1565c0; font-size:1.3rem; }
-        .project-card p { color:#444; line-height:1.6; }
-        footer { text-align:center; padding:40px; background:#0d47a1; color:white; margin-top:60px; }
-    </style>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-
-<header>
-    <h1>Daniel Rivni</h1>
-    <h2>Software Engineer</h2>
-</header>
-
-<section id="about">
-    <h3 class="section-title">About Me</h3>
-    <p class="about">
-        I am a dedicated Software Engineer with a strong computer science background and hands‑on experience in building, deploying, and optimizing full‑stack applications. Skilled in Java, Python, Node.js, React, TypeScript, Docker, Kubernetes, Jenkins, Git, SQL, and NoSQL systems. I enjoy creating clean, scalable solutions and have designed automated CI/CD pipelines to streamline development and deployment workflows. My leadership experience from military service has strengthened my ability to work under pressure, guide teams, and quickly adapt to new technologies.
-    </p>
-</section>
-
-<section id="projects">
-    <h3 class="section-title">Projects</h3>
-    <div class="projects">
-        <div class="project-card">
-            <h4>Coupix</h4>
-            <p>
-                Coupix is a modern and intuitive web application that helps users easily store, organize, and manage coupons and vouchers. It delivers a smooth user experience through a clean interface, efficient data management, and seamless interactions.
-            </p>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">DR</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
+    </nav>
 
-        <div class="project-card">
-            <h4>DroneAutoLanding</h4>
-            <p>
-                A computer‑vision‑driven system enabling a drone to autonomously land in front of a moving ArUco marker. The drone continuously adjusts its landing trajectory based on marker position, ensuring accurate alignment even as the target moves.
-            </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
         </div>
-
-        <div class="project-card">
-            <h4>Road‑Buddiz</h4>
-            <p>
-                Road‑Buddiz is a mobile solution designed to assist drivers facing unexpected vehicle issues. The app connects stranded individuals with nearby volunteers who can offer quick, on‑the‑spot help, making roadside assistance more accessible and community‑driven.
-            </p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">
+                    <span class="name-line">Daniel</span>
+                    <span class="name-line">Rivni</span>
+                </h1>
+                <div class="hero-title-wrapper">
+                    <h2 class="hero-title">
+                        <span class="title-text">Software Engineer</span>
+                        <span class="title-cursor">|</span>
+                    </h2>
+                </div>
+                <p class="hero-description">
+                    Crafting exceptional digital experiences through clean code, innovative solutions, and cutting-edge
+                    technology.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/DanielRivni" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/danielrivni/" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:drivni123@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">code.ts</span>
+                    </div>
+                    <div class="code-content">
+                        <pre><code><span class="code-keyword">const</span> <span class="code-variable">engineer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">'Daniel Rivni'</span>,
+  <span class="code-property">role</span>: <span class="code-string">'Software Engineer'</span>,
+  <span class="code-property">passion</span>: <span class="code-string">'Building amazing things'</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">'Full-Stack'</span>, <span class="code-string">'Cloud'</span>, <span class="code-string">'DevOps'</span>]
+};</code></pre>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    © 2025 Daniel Rivni — Portfolio Website
-</footer>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I am a dedicated <strong>Software Engineer</strong> with a strong computer science background
+                        and hands-on experience in building, deploying, and optimizing full-stack applications.
+                    </p>
+                    <p>
+                        Skilled in <strong>Java</strong>, <strong>Python</strong>, <strong>Node.js</strong>,
+                        <strong>React</strong>, <strong>TypeScript</strong>, <strong>Docker</strong>,
+                        <strong>Kubernetes</strong>, <strong>Jenkins</strong>, <strong>Git</strong>,
+                        <strong>SQL</strong>, and <strong>NoSQL</strong> systems. I enjoy creating clean, scalable
+                        solutions and have designed automated CI/CD pipelines to streamline development and deployment
+                        workflows.
+                    </p>
+                    <p>
+                        My leadership experience from military service has strengthened my ability to work under
+                        pressure, guide teams, and quickly adapt to new technologies. I'm passionate about writing clean
+                        code, solving complex problems, and continuously learning.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-code"></i>
+                            <div>
+                                <h4>Clean Code</h4>
+                                <p>Writing maintainable, scalable solutions</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-rocket"></i>
+                            <div>
+                                <h4>CI/CD</h4>
+                                <p>Automated deployment pipelines</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Team Leadership</h4>
+                                <p>Guiding teams to success</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="https://i.imagesup.co/images2/37b53357292605ddfa9807faef5d3e4458a3db14.jpg"
+                            alt="Daniel Rivni" class="profile-image" />
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i>
+                        Languages
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-cloud"></i>
+                        Cloud & DevOps
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-kubernetes"></i>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-jenkins"></i>
+                            <span>Jenkins</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL/NoSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i>
+                        Tools & Others
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-terminal"></i>
+                            <span>CLI</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Dev</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://coupix.lovable.app/login" target="_blank" rel="noopener noreferrer"
+                                    class="project-link" aria-label="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/DanielRivni/Coupix" target="_blank"
+                                    rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <img src="https://i.imagesup.co/images2/a2656220cc189f6e3b5081618be210077acb925e.png"
+                            alt="Coupix Project" class="project-image-img" />
+                    </div>
+                    <div class="project-content">
+                        <p class="project-category">Web Application</p>
+                        <h3 class="project-title">Coupix</h3>
+                        <p class="project-description">
+                            A modern and intuitive web application that helps users easily store, organize, and manage
+                            coupons and vouchers. It delivers a smooth user experience through a clean interface,
+                            efficient data management, and seamless interactions.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/DanielRivni/DroneAutoLanding" target="_blank"
+                                    rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <img src="https://i.imagesup.co/images2/180c3e90065e3d09f5da7bddc8d09736b439e4cc.png"
+                            alt="DroneAutoLanding Project" class="project-image-img" />
+                    </div>
+                    <div class="project-content">
+                        <p class="project-category">Computer Vision</p>
+                        <h3 class="project-title">DroneAutoLanding</h3>
+                        <p class="project-description">
+                            A computer-vision-driven system enabling a drone to autonomously land in front of a moving
+                            ArUco marker. The drone continuously adjusts its landing trajectory based on marker
+                            position, ensuring accurate alignment even as the target moves.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">ArUco</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://road-buddiz.web.app/" target="_blank" rel="noopener noreferrer"
+                                    class="project-link" aria-label="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/DanielRivni/Road-Buddiz" target="_blank"
+                                    rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <img src="https://i.imagesup.co/images2/913cc52c5f85f9c4148322c935dc2e92863935af.png"
+                            alt="Road-Buddiz Project" class="project-image-img" />
+                    </div>
+                    <div class="project-content">
+                        <p class="project-category">Mobile Application</p>
+                        <h3 class="project-title">Road-Buddiz</h3>
+                        <p class="project-description">
+                            A mobile solution designed to assist drivers facing unexpected vehicle issues. The app
+                            connects stranded individuals with nearby volunteers who can offer quick, on-the-spot help,
+                            making roadside assistance more accessible and community-driven.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Maps API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h3>Let's Work Together</h3>
+                    <p>
+                        I'm always open to discussing new opportunities, interesting projects, or just having a chat
+                        about technology. Whether you have a question or just want to say hi, feel free to reach out!
+                    </p>
+                    <div class="contact-info">
+                        <a href="mailto:drivni123@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>drivni123@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/DanielRivni" target="_blank" rel="noopener noreferrer"
+                            class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/DanielRivni</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/danielrivni/" target="_blank" rel="noopener noreferrer"
+                            class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Daniel Rivni. Built with passion and attention to detail.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/DanielRivni" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/danielrivni/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:drivni123@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
+
 </html>
