@@ -1241,14 +1241,17 @@ section {
         gap: 2rem;
     }
     
-    /* Hide scroll indicator on mobile to prevent overlap with social icons */
+    /* Adjust scroll indicator position on mobile to prevent overlap with social icons */
     .scroll-indicator {
-        display: none;
+        bottom: 10px;
+        right: 20px;
+        left: auto;
+        transform: none;
     }
     
     /* Add extra bottom margin to hero-social on mobile for better spacing */
     .hero-social {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 }
 
