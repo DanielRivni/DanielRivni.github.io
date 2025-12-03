@@ -1166,6 +1166,12 @@ section {
     .hero-visual {
         order: -1;
     }
+    
+    /* Ensure hero section allows proper centering */
+    .hero {
+        position: relative;
+        width: 100%;
+    }
 
     .about-content {
         grid-template-columns: 1fr;
@@ -1243,9 +1249,16 @@ section {
     
     /* Adjust scroll indicator position on mobile to prevent overlap with social icons */
     .scroll-indicator {
+        position: absolute;
         bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: none;
+        margin: 0 auto;
     }
     
     /* Add extra bottom margin to hero-social on mobile for better spacing */
